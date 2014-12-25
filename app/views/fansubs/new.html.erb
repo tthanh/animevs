@@ -1,0 +1,26 @@
+<%= provide(:title, "New Fansub") %>
+<div class="row">
+  <div class="col-md-12">
+    <h2>New Fansub</h2>
+    <%= form_for @fansub do |f| %>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="form-group">
+            <%= f.label :name %>
+            <%= f.text_field :name, class: 'form-control'%>
+          </div>
+          <div class="form-group">
+            <%= f.label :homepage %>
+            <%= f.text_field :homepage, class: 'form-control' %>
+          </div>
+          <div class="form-group">
+            <%= f.submit "Create", class: 'btn btn-primary' %>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <%= render 'shared/error_messages', object: f.object %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
