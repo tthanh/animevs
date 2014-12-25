@@ -14,7 +14,7 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password:
+  password: mashiro
   socket: /var/run/mysqld/mysqld.sock
 
 development:
@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: animevs_production
-  username: animevs
-  password: <%= ENV['ANIMEVS_DATABASE_PASSWORD'] %>
+  #username: animevs
+  #password: <%= ENV['ANIMEVS_DATABASE_PASSWORD'] %>
