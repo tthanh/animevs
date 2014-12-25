@@ -5,3 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Fansub.create!(
+  name: "Clip-sub",
+  homepage: "http://clip-sub.com/"
+)
+Fansub.create!(
+name: "Zing Fansub",
+homepage: "http://www.zingfansub.ws/zfs/"
+)

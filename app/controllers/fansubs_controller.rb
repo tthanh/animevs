@@ -22,9 +22,18 @@ class FansubsController < ApplicationController
   end
 
   def edit
+    @fansub = Fansub.find(params[:id])
+    @tag = @fansub.tag.nil? ? Tag.new : @fansub.tag
   end
 
   def update
+    @fansub = Fansub.find(params[:id])
+    if @fansub.update_attributes(fansub_params)
+      flash[:success] = "Fansub #{@fansub.name} information updated!"
+      redirect_to fansubs_url
+    else
+      render 'edit'
+    end
   end
 
   def destroy

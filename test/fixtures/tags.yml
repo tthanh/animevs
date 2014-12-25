@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fansub_id: 
+  title: MyString
+  image_url: MyString
+  public_date: 2014-12-26 00:55:49
+
+two:
+  fansub_id: 
+  title: MyString
+  image_url: MyString
+  public_date: 2014-12-26 00:55:49

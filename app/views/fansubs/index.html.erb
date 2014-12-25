@@ -3,7 +3,7 @@
   <div class="col-md-12">
     <% @fansubs.each do |fansub| %>
       <div class="fansub">
-        <h3><%= fansub.name %></h3>
+        <h3><%= link_to fansub.name, edit_fansub_path(fansub) %></h3>
         <p>
           Homepage: <%= link_to fansub.homepage, fansub.homepage, target: "_blank" %>
         </p>

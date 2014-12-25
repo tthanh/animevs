@@ -1,2 +1,63 @@
-<h1>Fansubs#edit</h1>
-<p>Find me in app/views/fansubs/edit.html.erb</p>
+<%= provide(:title, "Edit Fansub Information") %>
+<div class="row">
+  <div class="col-md-6">
+    <h1>Fansub Information</h1>
+    <%= form_for @fansub do |f| %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :homepage %>
+        <%= f.text_field :homepage, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Update", class: 'btn btn-primary' %>
+      </div>
+      <div class="form-group">
+        <%= render 'shared/error_messages', object: f.object %>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-md-6">
+    <h1>Fansub Tag</h1>
+    <% if @fansub.tag.nil? %>
+      <%= form_for @tag, url: fansub_tags_path(@fansub) do |f| %>
+        <div class="form-group">
+          <%= f.label :title %>
+          <%= f.text_field :title, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :image_url %>
+          <%= f.text_field :image_url, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :public_date %>
+          <%= f.text_field :public_date, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.submit "Create Tag", class: 'btn btn-primary' %>
+        </div>
+        <%=  %>
+      <% end %>
+    <% else %>
+      <%= form_for @tag, url: edit_fansub_tag_path(@fansub, @tag) do |f| %>
+        <div class="form-group">
+          <%= f.label :title %>
+          <%= f.text_field :title, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :image_url %>
+          <%= f.text_field :image_url, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :public_date %>
+          <%= f.text_field :public_date, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.submit "Update Tag", class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
