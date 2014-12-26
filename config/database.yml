@@ -49,6 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: animevs_production
-  #username: animevs
-  #password: <%= ENV['ANIMEVS_DATABASE_PASSWORD'] %>
+  database: animevs
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
