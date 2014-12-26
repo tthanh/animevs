@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141226061626) do
+ActiveRecord::Schema.define(version: 20141226075336) do
 
   create_table "fansubs", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20141226061626) do
     t.string   "public",     limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
+    t.string   "link",       limit: 255
   end
 
   add_index "posts", ["fansub_id"], name: "index_posts_on_fansub_id", using: :btree
@@ -39,6 +40,7 @@ ActiveRecord::Schema.define(version: 20141226061626) do
     t.string   "public_date", limit: 255
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+    t.string   "link",        limit: 255
   end
 
   add_index "tags", ["fansub_id"], name: "index_tags_on_fansub_id", using: :btree

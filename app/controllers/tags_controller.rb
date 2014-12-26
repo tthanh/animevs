@@ -25,6 +25,6 @@ class TagsController < ApplicationController
 
 	private
 	def tag_params
-		params.require(:tag).permit(:post, :title, :image_url, :public_date)
+		params.require(:tag).permit(:post, :title, :image_url, :public_date, :link)
 	end
 end
