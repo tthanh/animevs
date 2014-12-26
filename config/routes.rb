@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :fansubs do
-    resources :tags
+    resources :tags, only: [:create, :update]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
