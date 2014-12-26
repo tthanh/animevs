@@ -1,1 +1,12 @@
 <%= provide(:title, "Anime Vietsub Update") %>
+<div class="row">
+  <div class="col-md-12">
+    <% @posts.each do |post| %>
+      <h3><%= post.title %></h3>
+      <img src="<%= post.image %>"></img>
+      <p>
+        Public: <%= post.public %>
+      </p>
+    <% end %>
+  </div>
+</div>

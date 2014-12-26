@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  get 'craw' => 'home#craw'
+
   resources :fansubs do
     resources :tags, only: [:create, :update]
   end
